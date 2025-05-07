@@ -17,22 +17,29 @@ Welcome to my comprehensive learning repository focused on **Data Structures & A
 
 dsa-python-learning/
 │
-├── README.md  # Main overview and project purpose
-├── notes.md   # Master index of topics and progress
+├── README.md              # Main overview and project purpose
+├── notes.md               # Master index of topics and progress
 │
-├── dsa/       # DSA concepts and problems (topic-wise)
-│ ├── Arrays/
-│ │ ├── README.md  # Concept overview
-│ │ ├── notes.md   # Notes on arrays
-│ │ └── solutions.py  # LeetCode/DSA problems with tags
-│ ├── LinkedLists/
-│ ├── Stacks_Queues/
-│ └── ...
+├── dsa/                   # DSA concepts and problems (topic-wise)
+│   ├── Arrays/            # Arrays problems and notes
+│   │   ├── README.md      # Concept overview of Arrays
+│   │   ├── notes.md       # Notes related to Arrays (concepts, techniques)
+│   │   └── solutions.py   # LeetCode/DSA problems related to Arrays
+│   ├── LinkedLists/       # LinkedList problems and notes
+│   │   ├── README.md      # Concept overview of LinkedLists
+│   │   ├── notes.md       # Notes related to LinkedLists
+│   │   └── solutions.py   # LeetCode/DSA problems related to LinkedLists
+│   ├── Stacks_Queues/     # Stacks and Queues problems and notes
+│   │   ├── README.md      # Concept overview of Stacks and Queues
+│   │   ├── notes.md       # Notes related to Stacks and Queues
+│   │   └── solutions.py   # LeetCode/DSA problems related to Stacks and Queues
+│   └── ...                # Add other DSA topics similarly
 │
 └── python_basics_and_advanced/  # Core Python concepts and practice
-    ├── README.md
-    ├── notes.md
-    └── scripts/
+    ├── README.md               # Concept overview of Python Basics and Advanced
+    ├── notes.md                # Notes on Python basics and advanced topics
+    └── scripts/                 # Python scripts for practice
+
 
 ---
 
