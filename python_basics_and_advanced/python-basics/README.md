@@ -1,1 +1,1 @@
-Python basics
+Here we will cover python basics
