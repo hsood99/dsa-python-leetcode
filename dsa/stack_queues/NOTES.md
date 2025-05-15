@@ -9,11 +9,11 @@ A stack is an abstract data type where elements are added and removed at the top
 - peek()/top(): Return the top element without removing it (O(1)).
 - isEmpty()/size(): Check if the stack is empty or retrieve its current size (O(1)).
 
-# Implementations
+# Implementations (Stacks)
 - Array-based: Use a fixed or dynamic array with an index pointer (top). Push/pop at the end achieve amortized O(1).
 - Linked-list–based: Maintain a pointer to the head of a singly linked list; push/pop at the head take O(1) and avoid overflow unless memory is exhausted.
 
-# Common Applications
+# Common Applications (Stacks)
 - Expression evaluation & parsing: Convert infix to postfix or prefix and evaluate using a stack of operands and operators.
 - Function call management: The call stack tracks return addresses and local variables for nested or recursive calls.
 - Backtracking & depth-first search (DFS): Use a stack to explore graph paths or to implement undo mechanisms in applications.
@@ -24,17 +24,17 @@ A stack is an abstract data type where elements are added and removed at the top
 What Is a Queue?
 A queue is an abstract data type in which elements are inserted at the rear and removed from the front, following FIFO order. In FIFO, the first element enqueued is the first one dequeued.
 
-# Essential Operations
+# Essential Operations (Queues)
 - enqueue(x): Insert element x at the rear of the queue (O(1)).
 - dequeue(): Remove and return the front element; underflow if the queue is empty (O(1)).
 - peek()/front(): Return the front element without removing it (O(1)).
 - isEmpty()/size(): Check if the queue is empty or retrieve its size (O(1)).
 
-# Implementations
+# Implementations (Queues)
 - Circular array: Use modulo arithmetic on indices to treat a fixed-size array as a ring buffer, achieving true O(1) enqueue/dequeue.
 - Linked-list: Maintain pointers to both head and tail of a singly linked list; enqueue at tail and dequeue at head each take O(1).
 
-# Common Applications
+#  Common Applications (Queues)
 - Breadth-first search (BFS): Traverse graphs level by level by enqueuing neighbors.- 
 - Buffering & scheduling: Manage print queues, I/O buffers, and task scheduling systems.
 - Producer-consumer problems: Synchronize data exchange between threads or processes using a queue as the buffer.
