@@ -1,0 +1,33 @@
+# Branching and Merging Demo
+
+This file demonstrates a simulated workflow involving feature branches and merging into the main branch.
+
+Steps:
+1. Clone the repository (if not already cloned):
+   git clone https://github.com/your-username/your-repo.git
+
+2. Create a new branch for your feature or fix:
+   git checkout -b feature/add-hello-message
+
+3. Make changes to this file (e.g., add a line below):
+   - Added a hello message for demo purposes.
+
+4. Stage and commit the changes:
+   git add demo/branch_demo.txt
+   git commit -m "Add hello message in branch_demo.txt"
+
+5. Push the branch to remote:
+   git push origin feature/add-hello-message
+
+6. Open a Pull Request (PR) on GitHub from `feature/add-hello-message` → `main`.
+
+7. After review, merge the PR via GitHub UI.
+
+8. Delete the feature branch locally and remotely:
+   git branch -d feature/add-hello-message
+   git push origin --delete feature/add-hello-message
+
+Notes:
+- Always pull latest changes from `main` before creating a new branch.
+- Keep commits clean and messages meaningful.
+- Ensure PR reviews if collaborating with others.
