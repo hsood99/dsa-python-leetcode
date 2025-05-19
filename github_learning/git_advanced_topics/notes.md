@@ -188,23 +188,94 @@ git push origin feature-branch
 
 ## 9. Commit Message Best Practices
 
-- Use clear, concise messages.
-- Follow format:
+Writing clear and meaningful commit messages is a crucial practice that improves collaboration, code history readability, debugging, and code reviews. Here's a complete guide tailored for both solo and team projects:
+
+### ✅ Anatomy of a Good Commit Message
 
 ```
-type(scope): short description
+<type>(scope): Short, imperative summary (max ~50 characters)
+
+Optional longer description or context if needed.
+Explain *why* the change was made, not just *what* changed.
+
+Refs: #IssueNumber (if applicable)
 ```
 
-- Examples:
+---
 
-```
-feat(parser): add support for new syntax
-fix(ui): fix button alignment issue
-docs(readme): update installation instructions
+### ✍️ Golden Rules
+
+| Rule | Why It Matters |
+|------|----------------|
+| ✅ Use imperative mood | E.g., "Fix bug", not "Fixed" or "Fixes" |
+| ✅ Keep the summary line short | ~50 characters is ideal |
+| ✅ Separate subject and body with a blank line | Improves clarity in logs |
+| ✅ Use the body to explain why and how, not just what | Useful for future debugging or code archaeology |
+| ✅ Reference issues/PRs if applicable | Links your changes to discussions |
+
+---
+
+### 🔧 Types of Commits (Conventional Commits)
+
+| Type     | Use When You...                                |
+|----------|------------------------------------------------|
+| `feat`   | Add a new feature                              |
+| `fix`    | Fix a bug                                      |
+| `docs`   | Change documentation only                      |
+| `style`  | Code style (formatting, whitespace, no logic)  |
+| `refactor` | Refactor code without fixing or adding feature |
+| `test`   | Add or update tests                            |
+| `chore`  | Maintenance tasks (e.g., configs, package updates) |
+| `ci`     | Update CI/CD-related code (e.g., GitHub Actions) |
+| `perf`   | Improve performance                            |
+
+---
+
+### ✅ Good Commit Examples
+
+```bash
+feat(array): add sliding window max problem solution
+
+Refactored previous implementation and added O(n) version.
+Helps reduce time complexity for large datasets.
 ```
 
-- Use imperative mood (e.g., "Add", not "Added" or "Adding").
-- Reference related issue or PR if applicable.
+```bash
+fix(auth): prevent login crash on null token
+
+The issue was caused by unhandled null values in headers.
+Added a default fallback and logging.
+Refs: #124
+```
+
+```bash
+docs(git): add cherry-pick explanation to notes.md
+```
+
+```bash
+style: reformat array notes for consistent bullet usage
+```
+
+---
+
+### ❌ Bad Commit Examples
+
+| Bad Message     | Why It’s Bad                         |
+|-----------------|--------------------------------------|
+| `Update`        | Too vague — update what?             |
+| `bug fixes`     | No explanation or scope              |
+| `final changes` | Meaningless over time                |
+| `done`          | Done what? Be specific               |
+| `added file`    | What file? Why?                      |
+
+---
+
+### 💡 Pro Tips
+
+- Use a linter like [`commitlint`](https://github.com/conventional-changelog/commitlint) to enforce message structure.
+- Use `git commit -m "..."` for simple one-liners.
+- For detailed commits, use `git commit` (without `-m`) to open a multi-line editor.
+- Use `git log --oneline` to quickly review the readability of your history.
 
 ---
 
