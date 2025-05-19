@@ -1,3 +1,8 @@
+# 📁 github_learning/
+
+A structured Git & GitHub knowledge base.
+
+```
 github_learning/
 │
 ├── README.md
@@ -41,3 +46,4 @@ github_learning/
     │   └── ⚙️  Advanced concepts like cherry-pick, rebase, reflog, bisect, submodules, worktrees.
     └── README.md
         └── 📄 Intro and summary of advanced Git operations covered in this section.
+```
