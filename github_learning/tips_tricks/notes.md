@@ -13,7 +13,7 @@ git config --global alias.co checkout
 git config --global alias.br branch
 git config --global alias.ci commit
 git config --global alias.st status
-````
+```
 
 Example:
 `git co main` instead of `git checkout main`.
@@ -22,25 +22,25 @@ Example:
 
 ## 🔹 Undoing Commits and Changes
 
-* Undo last commit but keep changes staged:
+- Undo last commit but keep changes staged:
 
   ```bash
   git reset --soft HEAD~1
   ```
 
-* Amend last commit (modify message or add staged changes):
+- Amend last commit (modify message or add staged changes):
 
   ```bash
   git commit --amend
   ```
 
-* Discard changes in working directory (unstage):
+- Discard changes in working directory (unstage):
 
   ```bash
   git checkout -- <file>
   ```
 
-* Unstage staged files:
+- Unstage staged files:
 
   ```bash
   git reset HEAD <file>
@@ -77,13 +77,13 @@ git clean -n       # Dry run (preview removal)
 
 ## 🔹 Visualizing Commit History
 
-* Show compact commit graph:
+- Show compact commit graph:
 
   ```bash
   git log --oneline --graph --decorate --all
   ```
 
-* Custom readable log format:
+- Custom readable log format:
 
   ```bash
   git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short
@@ -133,27 +133,26 @@ Squashing combines commits for a cleaner history.
 
 ## 🔹 Reset vs Revert
 
-* `git reset` rewrites history by moving branch pointer (dangerous on shared branches).
-
-* `git revert` safely undoes changes by creating a new commit.
+- `git reset` rewrites history by moving branch pointer (dangerous on shared branches).
+- `git revert` safely undoes changes by creating a new commit.
 
 ---
 
 ## 🔹 Checking Differences
 
-* Between working directory and last commit:
+- Between working directory and last commit:
 
   ```bash
   git diff
   ```
 
-* Between staged changes and last commit:
+- Between staged changes and last commit:
 
   ```bash
   git diff --cached
   ```
 
-* Between two branches or commits:
+- Between two branches or commits:
 
   ```bash
   git diff branch1..branch2
@@ -163,13 +162,13 @@ Squashing combines commits for a cleaner history.
 
 ## 🔹 Useful Git Configurations
 
-* Enable color in output:
+- Enable color in output:
 
   ```bash
   git config --global color.ui auto
   ```
 
-* Set preferred editor (example: VS Code):
+- Set preferred editor (example: VS Code):
 
   ```bash
   git config --global core.editor "code --wait"
@@ -197,20 +196,20 @@ git reset --hard <reflog-hash>
 
 Submodules allow embedding external repos within your repo:
 
-* Add submodule:
+- Add submodule:
 
   ```bash
   git submodule add <repo-url> path/to/submodule
   git commit -m "Add submodule"
   ```
 
-* Clone repo with submodules:
+- Clone repo with submodules:
 
   ```bash
   git clone --recurse-submodules <repo-url>
   ```
 
-* Update submodules after cloning:
+- Update submodules after cloning:
 
   ```bash
   git submodule update --init --recursive
@@ -269,13 +268,9 @@ git gc
 
 Implementing these tips helps you:
 
-* Speed up your workflow
-* Maintain a cleaner commit history
-* Handle mistakes effectively
-* Collaborate better with others
+- Speed up your workflow
+- Maintain a cleaner commit history
+- Handle mistakes effectively
+- Collaborate better with others
 
 Happy Git hacking! 🚀
-
-```
-
-
