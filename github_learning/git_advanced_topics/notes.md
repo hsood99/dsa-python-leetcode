@@ -7,119 +7,116 @@ This document covers important advanced Git concepts and commands to complement 
 ## 1. git cherry-pick
 
 - **Purpose:** Apply a specific commit from one branch onto another without merging the entire branch.
-- **Usage:**
 
-  ```bash
-  git checkout target-branch
-  git cherry-pick <commit-hash>
-````
+```bash
+git checkout target-branch
+git cherry-pick <commit-hash>
+```
 
-* **Use cases:**
-  Backport bug fixes, apply specific commits selectively.
+- **Use cases:** Backport bug fixes, apply specific commits selectively.
 
-* **Handling conflicts:**
-  Resolve conflicts manually, then:
+- **Handling conflicts:** Resolve conflicts manually, then:
 
-  ```bash
-  git add <file>
-  git cherry-pick --continue
-  ```
+```bash
+git add <file>
+git cherry-pick --continue
+```
 
-* **Abort cherry-pick:**
+- **Abort cherry-pick:**
 
-  ```bash
-  git cherry-pick --abort
-  ```
+```bash
+git cherry-pick --abort
+```
 
 ---
 
 ## 2. git reflog
 
-* **What is reflog?**
+- **What is reflog?**  
   Git keeps a history of where HEAD and branches have pointed. This helps recover commits lost after resets, rebases, or accidental deletions.
 
-* **View reflog:**
+- **View reflog:**
 
-  ```bash
-  git reflog
-  ```
+```bash
+git reflog
+```
 
-* **Recover lost commit:**
+- **Recover lost commit:**  
   Find commit hash in reflog, then:
 
-  ```bash
-  git checkout <commit-hash>
-  # or to move branch back to that commit:
-  git reset --hard <commit-hash>
-  ```
+```bash
+git checkout <commit-hash>
+# or to move branch back to that commit:
+git reset --hard <commit-hash>
+```
 
-* **Common use:** Undo accidental resets, recover dangling commits.
+- **Common use:** Undo accidental resets, recover dangling commits.
 
 ---
 
 ## 3. Git Submodules
 
-* **Definition:** A Git repository embedded inside another Git repository. Useful for including external projects as dependencies.
+- **Definition:** A Git repository embedded inside another Git repository. Useful for including external projects as dependencies.
 
-* **Add a submodule:**
+- **Add a submodule:**
 
-  ```bash
-  git submodule add <repo-url> <path>
-  ```
+```bash
+git submodule add <repo-url> <path>
+```
 
-* **Clone a repo with submodules:**
+- **Clone a repo with submodules:**
 
-  ```bash
-  git clone --recurse-submodules <repo-url>
-  ```
+```bash
+git clone --recurse-submodules <repo-url>
+```
 
-* **Initialize and update submodules:**
+- **Initialize and update submodules:**
 
-  ```bash
-  git submodule update --init --recursive
-  ```
+```bash
+git submodule update --init --recursive
+```
 
-* **Update submodules to latest commit on their branches:**
+- **Update submodules to latest commit on their branches:**
 
-  ```bash
-  git submodule update --remote
-  ```
+```bash
+git submodule update --remote
+```
 
-* **Remove a submodule:**
+- **Remove a submodule:**
 
-  1. Delete the entry from `.gitmodules` file.
-  2. Run:
+1. Delete the entry from `.gitmodules` file.  
+2. Run:
 
-  ```bash
-  git rm --cached <submodule-path>
-  rm -rf <submodule-path>
-  ```
+```bash
+git rm --cached <submodule-path>
+rm -rf <submodule-path>
+```
 
 ---
 
 ## 4. git clean
 
-* **Purpose:** Remove untracked files and directories to clean your working directory.
+- **Purpose:** Remove untracked files and directories to clean your working directory.
 
-* **Preview files to be deleted (dry run):**
+- **Preview files to be deleted (dry run):**
 
-  ```bash
-  git clean -n
-  ```
+```bash
+git clean -n
+```
 
-* **Remove untracked files:**
+- **Remove untracked files:**
 
-  ```bash
-  git clean -f
-  ```
+```bash
+git clean -f
+```
 
-* **Remove untracked files and directories:**
+- **Remove untracked files and directories:**
 
-  ```bash
-  git clean -fd
-  ```
+```bash
+git clean -fd
+```
 
-* **Warning:** This operation is irreversible. Use `-n` to preview first.
+- **Warning:** This operation is irreversible. Use `-n` to preview first.
 
 ---
 
@@ -131,97 +128,95 @@ This document covers important advanced Git concepts and commands to complement 
 | `git checkout` | Switch branches or restore files (legacy) | Switch branches, restore file states           |
 | `git restore`  | Restore files to a previous state (newer) | Discard local changes without switching branch |
 
-* **Examples:**
+- **Examples:**
 
-  ```bash
-  git reset HEAD~1        # Undo last commit but keep changes staged
-  git restore file.txt    # Discard changes in file.txt
-  git checkout branch2    # Switch to branch2
-  ```
+```bash
+git reset HEAD~1        # Undo last commit but keep changes staged
+git restore file.txt    # Discard changes in file.txt
+git checkout branch2    # Switch to branch2
+```
 
 ---
 
 ## 6. Working with Multiple Remotes and Forks
 
-* **Add additional remote (e.g., upstream original repo):**
+- **Add additional remote (e.g., upstream original repo):**
 
-  ```bash
-  git remote add upstream <original-repo-url>
-  ```
+```bash
+git remote add upstream <original-repo-url>
+```
 
-* **Fetch and merge upstream changes:**
+- **Fetch and merge upstream changes:**
 
-  ```bash
-  git fetch upstream
-  git merge upstream/main
-  ```
+```bash
+git fetch upstream
+git merge upstream/main
+```
 
-* **Push changes to your fork:**
+- **Push changes to your fork:**
 
-  ```bash
-  git push origin feature-branch
-  ```
+```bash
+git push origin feature-branch
+```
 
 ---
 
 ## 7. Branch Protection Rules (Advanced)
 
-* Found in GitHub repository **Settings → Branches → Branch protection rules**.
-* Key features:
+- Found in GitHub repository **Settings → Branches → Branch protection rules**
+- Key features:
+  - Require pull request before merging
+  - Require status checks (e.g., CI tests)
+  - Require reviews from code owners
+  - Option to include administrators
+- Helps enforce workflow discipline and prevent direct pushes to protected branches.
+- When violated, pushing gives error:
 
-  * Require pull request before merging.
-  * Require status checks (e.g., CI tests).
-  * Require reviews from code owners.
-  * Include administrators option to allow/disallow bypass.
-* Helps enforce workflow discipline and prevent direct pushes to protected branches.
-* When violated, pushing gives error:
-
-  ```
-  ! [remote rejected] main -> main (protected branch hook declined)
-  ```
+```
+! [remote rejected] main -> main (protected branch hook declined)
+```
 
 ---
 
 ## 8. Pull Request (PR) Rules Enforcement and Bypass
 
-* PRs must be created and approved to merge into protected branches.
-* Admins can be given permission to bypass protection rules.
-* To bypass temporarily, an admin can disable protection or merge via GitHub UI.
+- PRs must be created and approved to merge into protected branches.
+- Admins can be given permission to bypass protection rules.
+- To bypass temporarily, an admin can disable protection or merge via GitHub UI.
 
 ---
 
 ## 9. Commit Message Best Practices
 
-* Use clear, concise messages.
+- Use clear, concise messages.
+- Follow format:
 
-* Follow format:
+```
+type(scope): short description
+```
 
-  ```
-  type(scope): short description
-  ```
+- Examples:
 
-* Examples:
+```
+feat(parser): add support for new syntax
+fix(ui): fix button alignment issue
+docs(readme): update installation instructions
+```
 
-  ```
-  feat(parser): add support for new syntax
-  fix(ui): fix button alignment issue
-  docs(readme): update installation instructions
-  ```
-
-* Use imperative mood (e.g., "Add", not "Added" or "Adding").
-
-* Reference related issue or PR if applicable.
+- Use imperative mood (e.g., "Add", not "Added" or "Adding").
+- Reference related issue or PR if applicable.
 
 ---
 
 ## 10. GitHub Notifications for Push Events
 
-* Configure email notifications for pushes and PRs in GitHub repository **Settings → Webhooks & Services → Notifications**.
-* Useful for CI/CD status alerts and team collaboration.
+- Configure email notifications for pushes and PRs in GitHub repository  
+  **Settings → Webhooks & Services → Notifications**
+- Useful for CI/CD status alerts and team collaboration.
 
 ---
 
-# Summary
+# 📌 Summary
 
 This document rounds out your Git mastery with important advanced commands and concepts. Use this as a reference for cherry-picks, reflog recovery, submodules, workspace cleaning, branch protections, and more.
 

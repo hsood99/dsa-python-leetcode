@@ -1,26 +1,43 @@
 github_learning/
 │
-├── README.md                   # Overview of your Git/GitHub learning
-├── notes.md                    # Detailed notes, commands, cheat sheets
-├── git_basics/                 # Git fundamentals
-│   ├── notes.md
-│   └── examples/               # CLI examples or screenshots
+├── README.md
+│   └── 📘 High-level overview of this learning repository.
+│       Explains the purpose, structure, and how to navigate the content.
 │
-├── branching_merging/          # Branches, PRs, merge conflicts
+├── notes.md
+│   └── 🧠 Master notes file combining everything learned about Git & GitHub.
+│       Serves as a one-stop reference for concepts, commands, errors, and best practices.
+│
+├── git_basics/
 │   ├── notes.md
+│   │   └── 🏁 Covers fundamental Git topics — installation, config, staging, commits, logs, etc.
+│   └── examples/
+│       └── 📂 Placeholder for CLI screenshots, example commands, or git output demonstrations.
+│
+├── branching_merging/
+│   ├── notes.md
+│   │   └── 🌿 Focuses on branching, merging strategies, PR workflows, and conflict resolution.
 │   └── demo/
-│       └── branch_demo.txt     # Any sample demo text or use cases
+│       └── branch_demo.txt
+│           └── 🧪 Sample use case or notes for trying out branch workflows practically.
 │
-├── github_advanced/            # GitHub Actions, security, workflows
+├── github_advanced/
 │   ├── notes.md
+│   │   └── 🚀 GitHub-specific features like protected branches, webhooks, notifications, Actions.
 │   └── workflows/
 │       └── sample.yml
+│           └── 🛠️  A multi-OS GitHub Actions workflow example to automate testing or CI.
 │
-├── git_internals/              # Refs, HEAD, objects, etc.
+├── git_internals/
 │   └── notes.md
+│       └── 🔍 Dives into Git plumbing like HEAD, refs, objects, SHA, and internal file structure.
 │
-├── git_advanced_topics/        # Leftover advanced Git concepts & commands
+├── tips_tricks/
 │   └── notes.md
+│       └── 💡 Handy Git aliases, cleanup tricks, CLI productivity boosters, and configs.
 │
-└── tips_tricks/                # Aliases, cleanup, configs
-    └── notes.md
+└── git_advanced_topics/
+    ├── notes.md
+    │   └── ⚙️  Advanced concepts like cherry-pick, rebase, reflog, bisect, submodules, worktrees.
+    └── README.md
+        └── 📄 Intro and summary of advanced Git operations covered in this section.
