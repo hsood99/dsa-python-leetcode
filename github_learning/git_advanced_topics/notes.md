@@ -287,6 +287,94 @@ style: reformat array notes for consistent bullet usage
 
 ---
 
+## 11. 🌱 Sparse Checkout
+
+Sparse Checkout lets you check out only a subset of files or directories from a repository without cloning the entire working tree.
+
+### ✅ Use Cases
+- Working with monorepos
+- Reducing disk usage and improving performance
+
+### 🛠️ How to Use
+
+```bash
+# Clone normally
+git clone https://github.com/user/repo.git
+cd repo
+
+# Enable sparse checkout
+git sparse-checkout init
+
+# Specify the folders to include
+git sparse-checkout set path/to/folder1 path/to/folder2
+```
+
+To disable and restore full checkout:
+
+```bash
+git sparse-checkout disable
+```
+
+---
+
+## 12. 🔄 Git Worktrees
+
+Git Worktrees allow you to check out multiple branches at once in separate working directories.
+
+```bash
+git worktree add ../branch-folder-name branch-name
+```
+
+✅ **Use Cases**:
+- Work on multiple features simultaneously
+- Compare branches side-by-side
+
+---
+
+## 13. 🔍 Git Bisect
+
+`git bisect` is a tool that helps identify the commit that introduced a bug by performing a binary search through the commit history.
+
+### How It Works
+
+You mark a known good commit and a known bad commit. Git then automatically checks out commits between these two points for testing. By marking each tested commit as good or bad, Git narrows down the commit that introduced the issue.
+
+### Basic Workflow
+
+1. Start bisecting:
+
+    ```bash
+    git bisect start
+    ```
+
+2. Mark the current commit as bad:
+
+    ```bash
+    git bisect bad
+    ```
+
+3. Mark a known good commit:
+
+    ```bash
+    git bisect good <commit-hash>
+    ```
+
+4. Test the checked out commit, then mark it as good or bad:
+
+    ```bash
+    git bisect good   # if the commit does not have the bug
+    git bisect bad    # if the commit has the bug
+    ```
+
+5. Repeat steps 4 until Git finds the first bad commit.
+
+6. End the bisect session:
+
+    ```bash
+    git bisect reset
+    ```
+---
+
 # 📌 Summary
 
 This document rounds out your Git mastery with important advanced commands and concepts. Use this as a reference for cherry-picks, reflog recovery, submodules, workspace cleaning, branch protections, and more.
