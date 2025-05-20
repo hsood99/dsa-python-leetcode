@@ -299,4 +299,130 @@ def evalRPN(tokens):
 
 ---
 
+# 📌 Advanced Topics – Week 3 (To Revisit Later)
+
+This document lists important **advanced and optional** topics related to **Stacks & Queues** that are useful for solving tough interview problems and system design questions.
+
+---
+
+## 🔁 1. Simulating Stack Using Queues (and Vice Versa)
+
+### Stack Using Two Queues
+**Approach:**
+- Maintain two queues: `q1`, `q2`.
+- `push(x)`: Enqueue to `q2`, then enqueue all elements of `q1` to `q2`. Swap `q1` and `q2`.
+- `pop()`: Dequeue from `q1`.
+
+**Time Complexity:**
+- Push: `O(n)`
+- Pop: `O(1)`
+
+---
+
+### Queue Using Two Stacks
+**Approach:**
+- Maintain two stacks: `in_stack`, `out_stack`.
+- `enqueue(x)`: Push to `in_stack`.
+- `dequeue()`: If `out_stack` is empty, transfer all from `in_stack` to `out_stack`, then pop from `out_stack`.
+
+---
+
+## 🔄 2. Sliding Window on Circular Arrays
+
+Used in problems like **Next Greater Element II**.
+
+**Approach:**
+- Use modulo operator `%` to simulate circular behavior: `i % n`
+- Traverse the array twice using: `for i in range(2 * n)`
+
+---
+
+## 🧱 3. Max Rectangle in Binary Matrix
+
+This is an extension of **Largest Rectangle in Histogram**.
+
+**Approach:**
+- For each row:
+  - Convert it into a histogram of heights.
+  - Apply the largest rectangle in histogram logic.
+
+**Time Complexity:** `O(rows * cols)`
+
+---
+
+## 🚏 4. Monotonic Queue – Custom Implementation
+
+Monotonic Queue is used to maintain the max/min in a sliding window.
+
+**Approach:**
+- Use `collections.deque`.
+- Maintain decreasing/increasing order by removing back elements smaller/larger than the current.
+- Often stores indices or values depending on the problem.
+
+**Use Case:** Sliding Window Maximum
+
+---
+
+## 🧠 5. LRU Cache – Low-Level (Doubly Linked List + HashMap)
+
+Implement manually without using `OrderedDict`.
+
+**Data Structures:**
+- Doubly Linked List (for maintaining order)
+- Hash Map (for O(1) lookup)
+
+**Operations:**
+- `get()` / `put()`:
+  - Move node to head (most recently used).
+  - If at capacity, remove node from tail (least recently used).
+
+---
+
+## 🧭 6. Previous Greater / Smaller Element
+
+This is a variation of the Monotonic Stack pattern.
+
+**Approach:**
+- For each element:
+  - Pop from stack while the top is less than (or greater than) the current.
+  - Store result accordingly.
+
+**Use Cases:**
+- Stock Span Problem
+- Largest Rectangle in Histogram
+- Trapping Rain Water
+
+---
+
+## 🌳 7. DFS / Recursion Stack Context (Preview from Week 4)
+
+Recursive algorithms use the **call stack (LIFO)** structure.
+
+**Key Points:**
+- Backtracking and DFS rely on the recursive call stack.
+- Iterative DFS uses an explicit stack.
+
+---
+
+## 🔄 8. Blocking Queue / Priority Queue APIs
+
+**Blocking Queue (Java/System Design):**
+- Thread-safe queue.
+- Blocks `enqueue()` if full, and `dequeue()` if empty.
+- Useful in multithreading environments.
+
+**Priority Queue:**
+- Implemented using `heapq` in Python (min-heap).
+- Common in Dijkstra’s algorithm, Huffman Coding, etc.
+
+---
+
+## 📘 Final Notes
+
+These topics are **not mandatory** for completing LeetCode 150, but they are **essential** for:
+- Top-tier interviews (e.g., Google, Meta)
+- Advanced system design discussions
+- Tackling hard LeetCode problems
+---
+
 ## ✅ You are now ready to solve all problems in Week 3 with confidence!
