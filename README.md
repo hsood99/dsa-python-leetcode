@@ -13,6 +13,7 @@ Welcome to my comprehensive learning repository focused on **Data Structures & A
 
 ---
 
+```
 ## 📂 Folder Structure
 
 dsa-python-learning/
@@ -39,6 +40,7 @@ dsa-python-learning/
     ├── README.md               # Concept overview of Python Basics and Advanced
     ├── notes.md                # Notes on Python basics and advanced topics
     └── scripts/                 # Python scripts for practice
+```
 
 
 ---
