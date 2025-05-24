@@ -13,9 +13,9 @@ Welcome to my comprehensive learning repository focused on **Data Structures & A
 
 ---
 
-```
 ## 📂 Folder Structure
 
+```
 dsa-python-learning/
 │
 ├── README.md              # Main overview and project purpose
