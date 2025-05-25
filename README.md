@@ -108,7 +108,7 @@ These tags help identify problems for revision and tracking progress.
 
 ## 🙏 Credit
 
-This repository is maintained by [Your Name]. Feel free to explore and learn, but please give credit if you reuse content.
+This repository is maintained by Hitesh Sood. Feel free to explore and learn, but please give credit if you reuse content.
 
 ---
 
