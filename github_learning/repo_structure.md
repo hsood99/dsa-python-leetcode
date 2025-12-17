@@ -47,3 +47,4 @@ github_learning/
     └── README.md
         └── 📄 Intro and summary of advanced Git operations covered in this section.
 ```
+by Hitesh Sood
